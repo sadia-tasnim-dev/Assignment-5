@@ -340,23 +340,32 @@
               <div class="flex flex-col mt-6">
                 <h1 class="font-bold mb-3">Passenger Name*</h1>
                 <input
+                  id="nameInput"
                   class="border border-solid border-gray-300 py-3 px-7 rounded-2xl mb-4"
                   type="text"
                   placeholder="Enter your name"
                 />
                 <h2 class="font-bold mb-3">Phone Number*</h2>
                 <input
+                  id="phoneInput"
                   class="border border-solid border-gray-300 py-3 px-7 rounded-2xl mb-4"
-                  type="text"
+                  type="number"
                   placeholder="Enter your phone number"
                 />
                 <h3 class="font-bold mb-3">Email ID</h3>
                 <input
+                  id="emailInput"
                   class="border border-solid border-gray-300 py-3 px-7 rounded-2xl mb-6"
-                  type="text"
+                  type="email"
                   placeholder="Enter your email id"
                 />
-                <button class="py-3 px-7 rounded-2xl bg-[#1DD100] text-white font-bold">Next</button>
+                <button
+                  id="submitButton"
+                  disabled
+                  class="py-3 px-7 cursor-pointer disabled:cursor-not-allowed disabled:bg-gray-400 rounded-2xl bg-[#1DD100] text-white font-bold"
+                >
+                  Next
+                </button>
               </div>
               <!-- --------enter personal info-------- -->
             </div>
