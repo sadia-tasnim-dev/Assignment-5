@@ -10,9 +10,10 @@ const applyCouponButtonDom = document.getElementById("applyCouponButton");
 const totalBookingDom = document.getElementById("totalBooking");
 const discountContainerDom = document.getElementById("discountContainer");
 const couponContainerDom = document.getElementById("couponContainer");
-const nameInputDom = document.getElementById("nameInput");
 const phoneInputDom = document.getElementById("phoneInput");
 const submitButtonDom = document.getElementById("submitButton");
+const modalDom = document.getElementById("modal");
+const continueButtonDom = document.getElementById("continueButton");
 
 // * variables * \\
 const totalSeats = 20;
@@ -24,9 +25,9 @@ const discountCouponObject = {
   NEW15: 0.15,
   "Couple 20": 0.2,
 };
-let name = "";
+
 let phone = "";
-let email = "";
+
 // adding event lister for each seats
 for (const button of seatButtonsDom) {
   button.addEventListener("click", function () {
@@ -48,6 +49,7 @@ function handleSelectSeats(seatNumber, element) {
   }
 
   // adding clicked seat into the objects
+  if (selectedSeatsObject[seatNumber]) return;
   selectedSeatsObject[seatNumber] = seatNumber;
   // updating total seats number and selected seats and totalBooking
   totalSeatSelected = Object.keys(selectedSeatsObject).length;
@@ -103,7 +105,7 @@ function applyCoupon() {
   couponContainerDom.style.display = "none";
 }
 
-phoneInputDom.addEventListener("keyup", function (event) {
+phoneInputDom.addEventListener("keyup", function () {
   phone = phoneInputDom.value;
   // active the next button
   activeNextButton();
@@ -117,3 +119,14 @@ function activeNextButton() {
     submitButtonDom.disabled = true;
   }
 }
+
+// open the modal
+submitButtonDom.addEventListener("click", function () {
+  modalDom.style.display = "flex";
+});
+
+// closing the modal
+continueButtonDom.addEventListener("click", function () {
+  modalDom.style.display = "none";
+  window.location.reload();
+});

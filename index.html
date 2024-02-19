@@ -99,7 +99,7 @@
       <!-- --------section 2----------- -->
       <!-- --------section 3----------- -->
       <section>
-        <!-- --------section 3.1 ----------- -->
+        <!-- -------- section 3.1 ----------- -->
         <section id="buyTicketSection" class="border-t-2 border-[#1DD100] rounded-t-[70px] bg-[#f5f6f6]">
           <!-- --------section 3.1.1 GoRoute Paribahan ----------- -->
           <div class="mt-24">
@@ -400,7 +400,10 @@
           </div>
         </div>
       </footer>
-      <section class="h-screen w-full bg-[#f5f6f6] justify-center items-center hidden">
+      <section
+        id="modal"
+        class="h-screen fixed top-0 left-0 w-full bg-gray-700/80 justify-center items-center hidden"
+      >
         <div class="bg-white flex flex-col justify-center items-center p-10 rounded-2xl">
           <img src="./images/success.png" />
           <h1 class="text-[#27ae60] font-bold text-2xl mt-6 mb-4">SUCCESS</h1>
@@ -411,7 +414,9 @@
           <p class="font-medium text-xl text-[#4A4A4A]/50 mb-3">
             Shortly you will find a confirmation in your email.
           </p>
-          <button class="bg-[#27ae60] text-white font-bold py-2 px-14 rounded-[32px]">Continue</button>
+          <button id="continueButton" class="bg-[#27ae60] text-white font-bold py-2 px-14 rounded-[32px]">
+            Continue
+          </button>
         </div>
       </section>
     </main>
